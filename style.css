@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+:root{
+    --SoftOrange: hsl(35, 77%, 62%);
+    --SoftRed: hsl(5, 85%, 63%);
+
+    --OffWhite: hsl(36, 100%, 99%);
+    --GrayishBlue: hsl(233, 8%, 79%);
+    --DarkGrayishBlue: hsl(236, 13%, 42%);
+    --VeryDarkBlue: hsl(240, 100%, 5%);
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+}
+p{
+    color: var(--DarkGrayishBlue);
+    font-size: 1rem;
+    letter-spacing: 0.6px;
+
+    line-height: 1.8rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    width: 100%;
+    opacity: 100%;
+}
+* :hover{
+    transition: .3s;
+}
+
+
+
+body{
+    padding: 3rem 11.3vw;
+    opacity: 100%;
+    overflow-x: hidden;
+}
+
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+#logo-icon{
+    width: 4.5rem;
+}
+header button{
+    display: none;
+    cursor: pointer;
+    height: 2rem;
+}
+header nav{
+    display: flex;
+    gap: 2.7rem;
+    transition: .3s;
+}
+header a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--DarkGrayishBlue);
+    font-weight: 400;
+}
+header a:hover{
+    color: var(--SoftRed);
+}
+header button{
+    border: none;
+    background-color: transparent;    
+}
+#menu-button-close{
+    display: none;
+}
+
+
+
+main{
+    display: grid;
+    grid-template-areas:
+    "ilust   ilust   new"
+    "title   desc    new"
+    "art1    art2    art3";
+    grid-column: 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+
+
+#img-illustration{
+    grid-area: ilust;
+}
+
+
+
+#title{
+    grid-area: title;
+    line-height: 4rem;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+
+
+#description{
+    grid-area: desc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+
+#description button{
+    background-color: var(--SoftRed);
+    border: none;
+    color: var(--OffWhite);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding: 1rem 2.2rem;
+    
+}
+#description button:hover{
+    background-color: var(--VeryDarkBlue);
+}
+
+
+
+#new-section{
+    grid-area: new;
+    background-color: var(--VeryDarkBlue);
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+#new-section h2{
+    color: var(--SoftOrange);
+    font-size: 3rem;
+}
+#new-section h3:hover{
+    color: var(--SoftOrange);
+}
+#new-section h3{
+    color: var(--OffWhite);
+    font-size: 1.5rem;   
+}
+#new-section p{
+    color: var(--GrayishBlue);
+}
+#new-section hr{
+    border: .5px solid var(--DarkGrayishBlue);
+}
+
+
+
+.articles{
+    display: flex;
+}
+.articles img{
+    width: 7.4rem;
+    object-fit: cover;
+    object-position: center;
+}
+.articles > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .8rem;
+    margin-left: 1.5rem;
+}
+.articles h2{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--GrayishBlue);
+}
+.articles h3{
+    font-size: 1.3rem;
+    font-weight: 800;
+    width: fit-content;
+}
+.articles h3:hover{
+    color: var(--SoftRed);
+}
+.articles p{
+    letter-spacing: 0.8px;
+    color: var(--DarkGrayishBlue);
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+}
+
+#article-01{
+    grid-area: art1;
+}
+#article-02{
+    grid-area: art2;
+}
+#article-03{
+    grid-area: art3;
+}
+
+
+
+@media (max-width: 1290px){
+    body{
+        padding: 3rem 4.5vw;
+    }
+}
+@media (max-width: 1088px){
+    body{
+        padding: 3rem 1rem;
+        padding: 1rem 20vw;
+        position: relative;
+    }
+
+
+
+    main{
+        grid-template-areas:
+        "ilust"
+        "title"
+        "desc"
+        "new"
+        "art1"
+        "art2"
+        "art3";
+        gap: 2rem;
+    }
+
+
+
+    header{
+        margin: 1rem 0 1.6rem 0;
+    }
+    #logo-icon{
+        width: 3rem;
+    }
+    header button{
+        display: inline-block;
+        z-index: 2;
+    }
+    header nav{
+        flex-direction: column;        position: absolute;
+        background-color: var(--OffWhite);
+        height: 150vh;
+        width: 55vw;
+        top: 0;
+        left: 100vw;
+        padding: 20vh 3rem;
+    }
+
+
+
+    #title{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+
+
+    #description p{
+        line-height: 1.6rem;
+    }
+
+
+
+    #new-section{
+        padding: 1rem 1rem;
+        gap: 1rem;
+    }
+    #new-section h2{
+        font-size: 2rem;
+    }
+    #new-section h3{
+        font-size: 1.3rem;
+    }
+
+
+
+    .articles img{
+        width: 30%;
+    }
+    .articles > div{
+        gap: .5rem;
+    }
+    .articles h3{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 620px){
+    body{
+        padding: 1rem 1rem;
+    }
+}
